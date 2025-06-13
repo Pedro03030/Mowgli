@@ -1,0 +1,56 @@
+/* Fuente y fondo animado */
+body{
+  font-family:'Comic Neue',cursive;
+  background:linear-gradient(135deg,#b2f7ef,#a0e7e5,#fcd5ce);
+  background-size:400% 400%;
+  animation:backgroundMove 20s ease infinite;
+  margin:0;padding:0;color:#333;
+}
+@keyframes backgroundMove{
+  0%{background-position:0 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0 50%;}
+}
+/* Cabecera */
+header{
+  background:#2b9348;color:#fff;text-align:center;
+  padding:30px 20px;font-size:2em;
+  border-bottom:5px dashed #55a630;
+}
+.animado{animation:bounceIn 1s ease;}
+@keyframes bounceIn{
+  0%{transform:scale(.5);opacity:0;}
+  100%{transform:scale(1);opacity:1;}
+}
+/* Botones idioma */
+.buttons{text-align:center;margin:20px;}
+button{
+  padding:12px 25px;font-size:18px;margin:10px;border:none;
+  border-radius:20px;background:#55a630;color:#fff;cursor:pointer;
+  transition:transform .2s,background-color .3s;
+}
+button:hover{background:#80b918;transform:scale(1.1);}
+/* Secciones */
+section{
+  background:#ffffffcc;border-radius:20px;
+  margin:30px auto;padding:25px;max-width:800px;
+  box-shadow:0 8px 16px #0003;transition:transform .3s;
+}
+section:hover{transform:scale(1.01);}
+img{width:100%;max-height:400px;object-fit:cover;border-radius:15px;margin-top:20px;}
+/* Audiolibro */
+.audio-section{text-align:center;background:#fefae0;}
+.audio-section h2{font-size:1.5em;color:#4a4e69;margin-bottom:15px;}
+.audio-section audio{margin:10px auto;width:90%;max-width:600px;display:block;}
+/* PDF */
+.pdf-section{text-align:center;background:#e9f5db;}
+.pdf-section h2{font-size:1.5em;margin-bottom:15px;color:#386641;}
+iframe{border:2px solid #6a994e;border-radius:12px;box-shadow:0 4px 10px #0002;}
+.pdf-download{
+  display:inline-block;margin-top:15px;padding:10px 20px;
+  background:#55a630;color:#fff;text-decoration:none;border-radius:20px;
+  transition:background .3s;
+}
+.pdf-download:hover{background:#80b918;}
+/* Footer */
+footer{text-align:center;padding:20px;font-size:16px;color:#444;background:#d9f99d;border-top:2px dashed #aacc00;}

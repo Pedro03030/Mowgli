@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>The Jungle Book Project</title>
+
+  <!-- Fuente divertida -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap">
+  <!-- CSS del sitio -->
+  <link rel="stylesheet" href="CSS/estilo.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <h1 class="animado">🌴 The Jungle Book / El Libro de la Selva 🌴</h1>
+  </header>
+
+  <!-- Botones de idioma -->
+  <div class="buttons">
+    <button onclick="showEnglish()">🌎 English</button>
+    <button onclick="showSpanish()">🌍 Español</button>
+  </div>
+
+  <!-- Contenido en inglés -->
+  <div id="english">
+    <section>
+      <h2>📚 Story Summary</h2>
+      <p>
+        "The Jungle Book" tells the story of Mowgli, a boy raised by wolves in the Indian jungle…
+      </p>
+      <img src="IMG/mowgli.webp" alt="Mowgli">
+    </section>
+  </div>
+
+  <!-- Contenido en español -->
+  <div id="spanish" style="display:none;">
+    <section>
+      <h2>📖 Resumen de la historia</h2>
+      <p>
+        "El Libro de la Selva" cuenta la historia de Mowgli, un niño criado por lobos en la selva india…
+      </p>
+      <img src="IMG/mowgli.webp" alt="Mowgli">
+    </section>
+  </div>
+
+  <!-- Audiolibro -->
+  <section class="audio-section">
+    <h2>🎧 Audiolibro - Escuchá la historia</h2>
+    <audio controls><source src="audio/part1.mp3" type="audio/mpeg"></audio>
+    <audio controls><source src="audio/part2.mp3" type="audio/mpeg"></audio>
+    <audio controls><source src="audio/part3.mp3" type="audio/mpeg"></audio>
+    <audio controls><source src="audio/part4.mp3" type="audio/mpeg"></audio>
+    <audio controls><source src="audio/part5.mp3" type="audio/mpeg"></audio>
+  </section>
+
+  <!-- PDF en español -->
+  <section class="pdf-section">
+    <h2>📄 PDF completo en español</h2>
+
+    <!-- Visor incrustado -->
+    <iframe
+      src="pdf/Mowgly-completo-baja-1-1.pdf#toolbar=0"
+      title="Libro de la Selva PDF"
+      loading="lazy"
+      width="100%"
+      height="500">
+    </iframe>
+
+    <!-- Botón de descarga -->
+    <a class="pdf-download" href="pdf/Mowgly-completo-baja-1-1.pdf" download>
+      ⬇️ Descargar PDF
+    </a>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Creado por Pedro 🌟</p>
+  </footer>
+
+  <!-- Lógica JS -->
+  <script src="script.js"></script>
+</body>
+</html>
