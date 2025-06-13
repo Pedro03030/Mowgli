@@ -54,3 +54,28 @@ iframe{border:2px solid #6a994e;border-radius:12px;box-shadow:0 4px 10px #0002;}
 .pdf-download:hover{background:#80b918;}
 /* Footer */
 footer{text-align:center;padding:20px;font-size:16px;color:#444;background:#d9f99d;border-top:2px dashed #aacc00;}
+
+
+.question {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .option {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      width: 300px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .option:hover {
+      background-color: #45a049;
+    }
+    .score {
+      font-size: 22px;
+      margin-top: 20px;
+      color: #333;
+    }
