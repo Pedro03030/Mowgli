@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>The Jungle Book Project</title>
 
   <!-- Fuente divertida -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
+    rel="stylesheet"
+  />
   <!-- CSS del sitio -->
-  <link rel="stylesheet" href="CSS/estilo.css">
+  <link rel="stylesheet" href="CSS/estilo.css" />
 </head>
 <body>
   <!-- Encabezado -->
@@ -26,35 +29,37 @@
     <section>
       <h2>📚 Story Summary</h2>
       <p>
-        "The Jungle Book" tells the story of Mowgli, a boy raised by wolves in the Indian jungle…
+        "The Jungle Book" tells the story of Mowgli, a boy raised by wolves in
+        the Indian jungle…
       </p>
-      <img src="IMG/mowgli.webp" alt="Mowgli">
+      <img src="IMG/mowgli.webp" alt="Mowgli" />
     </section>
   </div>
 
   <!-- Contenido en español -->
-  <div id="spanish" style="display:none;">
+  <div id="spanish" style="display: none">
     <section>
       <h2>📖 Resumen de la historia</h2>
       <p>
-        "El Libro de la Selva" cuenta la historia de Mowgli, un niño criado por lobos en la selva india…
+        "El Libro de la Selva" cuenta la historia de Mowgli, un niño criado por
+        lobos en la selva india…
       </p>
-      <img src="IMG/mowgli.webp" alt="Mowgli">
+      <img src="IMG/mowgli.webp" alt="Mowgli" />
     </section>
   </div>
 
   <!-- Audiolibro -->
   <section class="audio-section">
     <h2>🎧 Audiolibro - Escuchá la historia</h2>
-    <audio controls><source src="audio/part1.mp3" type="audio/mpeg"></audio>
-    <audio controls><source src="audio/part2.mp3" type="audio/mpeg"></audio>
-    <audio controls><source src="audio/part3.mp3" type="audio/mpeg"></audio>
-    <audio controls><source src="audio/part4.mp3" type="audio/mpeg"></audio>
-    <audio controls><source src="audio/part5.mp3" type="audio/mpeg"></audio>
+    <audio controls><source src="audio/part1.mp3" type="audio/mpeg" /></audio>
+    <audio controls><source src="audio/part2.mp3" type="audio/mpeg" /></audio>
+    <audio controls><source src="audio/part3.mp3" type="audio/mpeg" /></audio>
+    <audio controls><source src="audio/part4.mp3" type="audio/mpeg" /></audio>
+    <audio controls><source src="audio/part5.mp3" type="audio/mpeg" /></audio>
   </section>
 
   <!-- PDF en español -->
-<section class="pdf-section" style="display: none;">
+  <section class="pdf-section" style="display: none">
     <h2>📄 PDF completo en español</h2>
 
     <!-- Visor incrustado -->
@@ -63,18 +68,34 @@
       title="Libro de la Selva PDF"
       loading="lazy"
       width="100%"
-      height="500">
-    </iframe>
+      height="500"
+    ></iframe>
 
     <!-- Botón de descarga -->
-    <a class="pdf-download" href="pdf/Mowgly-completo-baja-1-1.pdf" download>
-      ⬇️ Descargar PDF
-    </a>
+    <a class="pdf-download" href="pdf/Mowgly-completo-baja-1-1.pdf" download
+      >⬇️ Descargar PDF</a
+    >
+  </section>
+
+  <!-- Juego Encuentra a Baloo -->
+  <section class="game-section">
+    <h2 id="titulo-juego">🕵️‍♂️ Encuentra a Baloo</h2>
+    <p id="instruccion-juego">¿Dónde está Baloo escondido?</p>
+
+    <div id="contenedor-arbustos">
+      <div class="arbusto" onclick="elegir(0)"></div>
+      <div class="arbusto" onclick="elegir(1)"></div>
+      <div class="arbusto" onclick="elegir(2)"></div>
+    </div>
+
+    <p id="resultado-juego"></p>
+    <p id="puntaje-baloo">Puntaje: 0</p>
+    <button onclick="nuevaRonda()">🔄 Nueva ronda</button>
   </section>
 
   <!-- Pie de página -->
   <footer>
-    <p>Creado por Pedro 🌟</p>
+    <p>Creado por Di Prinzio - Hernandorena - Barrientos - Nicora</p>
   </footer>
 
   <!-- Lógica JS -->
