@@ -3,156 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <title>The Jungle Book Project</title>
-
-  <!-- Fuente divertida -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- CSS del sitio -->
-  <link rel="stylesheet" href="CSS/estilo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
-  <!-- Encabezado -->
+
   <header>
     <h1 class="animado">🌴 The Jungle Book / El Libro de la Selva 🌴</h1>
   </header>
 
   <!-- Botones de idioma -->
   <div class="buttons">
-    <button onclick="showEnglish()">🌎 English</button>
-    <button onclick="showSpanish()">🌍 Español</button>
+    <button id="btn-en">🌎 English</button>
+    <button id="btn-es">🌍 Español</button>
   </div>
 
   <!-- Contenido en inglés -->
-  <div id="english">
+  <div id="english" style="display: none;">
     <section>
       <h2>📚 Story Summary</h2>
-      <p>
-        "The Jungle Book" tells the story of Mowgli, a boy raised by wolves in
-        the Indian jungle…
-      </p>
+      <p>"The Jungle Book" tells the story of Mowgli, a boy raised by wolves in the Indian jungle...</p>
       <img src="IMG/mowgli.webp" alt="Mowgli" />
     </section>
 
-  <!-- Audiolibro -->
-  <section class="audio-section">
-    <h2>🎧 Audiolibro - Escuchá la historia</h2>
-    <audio controls><source src="audio/part1.mp3" type="audio/mpeg"></audio>
-    <audio controls><source src="audio/part2.mp3" type="audio/mpeg"></audio>
-    <audio controls><source src="audio/part3.mp3" type="audio/mpeg"></audio>
-    <audio controls><source src="audio/part4.mp3" type="audio/mpeg"></audio>
-    <audio controls><source src="audio/part5.mp3" type="audio/mpeg"></audio>
-  </section>
-
-
-  <section>
-  <h1>Trivia: The Jungle Book</h1>
-  <div id="quiz-container-en">
-    <div id="question-en" class="question"></div>
-    <div id="options-en"></div>
-    <div id="score-en" class="score"></div>
-  </div>
-</section>
-
-<script>
-  const questions = [
-    {
-      question: "What is the name of the boy protagonist in The Jungle Book?",
-      options: ["Tarzan", "Mowgli", "Bagheera", "Akela"],
-      answer: "Mowgli"
-    },
-    {
-      question: "What kind of animal is Baloo?",
-      options: ["A tiger", "A bear", "A panther", "A wolf"],
-      answer: "A bear"
-    },
-    {
-      question: "Who is the main antagonist of the story?",
-      options: ["Kaa", "Shere Khan", "King Louie", "Raksha"],
-      answer: "Shere Khan"
-    }
-  ];
-
-  let currentQuestion = 0;
-  let score = 0;
-
-  function showQuestion() {
-    const q = questions[currentQuestion];
-    document.getElementById("question-en").textContent = q.question;
-    const optionsDiv = document.getElementById("options-en");
-    optionsDiv.innerHTML = "";
-    q.options.forEach(option => {
-      const btn = document.createElement("button");
-      btn.className = "option";
-      btn.textContent = option;
-      btn.onclick = () => checkAnswer(option);
-      optionsDiv.appendChild(btn);
-    });
-  }
-
-  function checkAnswer(selected) {
-    if (selected === questions[currentQuestion].answer) {
-      score++;
-    }
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-      showQuestion();
-    } else {
-      showScore();
-    }
-  }
-
-  function showScore() {
-    document.getElementById("quiz-container-en").innerHTML =
-      `<h2>Game Over!</h2>
-       <p class="score">Final score: ${score} out of ${questions.length}</p>`;
-  }
-
-  showQuestion();
-</script>
+    <section class="audio-section" style="display: block;">
+      <h2>🎧 Audiobook - Listen to the story</h2>
+      <audio controls><source src="audio/part1.mp3" type="audio/mpeg"></audio>
+      <audio controls><source src="audio/part2.mp3" type="audio/mpeg"></audio>
+      <audio controls><source src="audio/part3.mp3" type="audio/mpeg"></audio>
+      <audio controls><source src="audio/part4.mp3" type="audio/mpeg"></audio>
+      <audio controls><source src="audio/part5.mp3" type="audio/mpeg"></audio>
+    </section>
   </div>
 
   <!-- Contenido en español -->
-  <div id="spanish" style="display: none">
+  <div id="spanish" style="display: block;">
     <section>
       <h2>📖 Resumen de la historia</h2>
-      <p>
-        "El Libro de la Selva" cuenta la historia de Mowgli, un niño criado por
-        lobos en la selva india…
-      </p>
+      <p>"El Libro de la Selva" cuenta la historia de Mowgli, un niño criado por lobos en la selva india...</p>
       <img src="IMG/mowgli.webp" alt="Mowgli" />
     </section>
+
+    <section class="pdf-section" style="display: block;">
+      <h2>📄 PDF completo en español</h2>
+      <iframe src="pdf/Mowgly-completo-baja-1-1.pdf#toolbar=0" title="Libro de la Selva PDF" loading="lazy" width="100%" height="500"></iframe>
+      <a class="pdf-download" href="pdf/Mowgly-completo-baja-1-1.pdf" download>⬇️ Descargar PDF</a>
+    </section>
   </div>
-
-  <!-- Audiolibro -->
-  <section class="audio-section">
-    <h2>🎧 Audiolibro - Escuchá la historia</h2>
-    <audio controls><source src="audio/part1.mp3" type="audio/mpeg" /></audio>
-    <audio controls><source src="audio/part2.mp3" type="audio/mpeg" /></audio>
-    <audio controls><source src="audio/part3.mp3" type="audio/mpeg" /></audio>
-    <audio controls><source src="audio/part4.mp3" type="audio/mpeg" /></audio>
-    <audio controls><source src="audio/part5.mp3" type="audio/mpeg" /></audio>
-  </section>
-
-  <!-- PDF en español -->
-  <section class="pdf-section" style="display: none">
-    <h2>📄 PDF completo en español</h2>
-
-    <!-- Visor incrustado -->
-    <iframe
-      src="pdf/Mowgly-completo-baja-1-1.pdf#toolbar=0"
-      title="Libro de la Selva PDF"
-      loading="lazy"
-      width="100%"
-      height="500"
-    ></iframe>
-
-    <!-- Botón de descarga -->
-    <a class="pdf-download" href="pdf/Mowgly-completo-baja-1-1.pdf" download
-      >⬇️ Descargar PDF</a
-    >
-  </section>
 
   <!-- Juego Encuentra a Baloo -->
   <section class="game-section">
@@ -170,79 +67,11 @@
     <button onclick="nuevaRonda()">🔄 Nueva ronda</button>
   </section>
 
-<section>
-  <h1>Trivia: El Libro de la Selva</h1>
-  <div id="quiz-container-es">
-    <div id="question-es" class="question"></div>
-    <div id="options-es"></div>
-    <div id="score-es" class="score"></div>
-  </div>
-</section>
-
-<script>
-  const preguntas = [
-    {
-      question: "¿Cómo se llama el niño protagonista de El libro de la selva?",
-      options: ["Tarzán", "Mowgli", "Bagheera", "Akela"],
-      answer: "Mowgli"
-    },
-    {
-      question: "¿Qué animal es Baloo?",
-      options: ["Un tigre", "Un oso", "Una pantera", "Un lobo"],
-      answer: "Un oso"
-    },
-    {
-      question: "¿Quién es el principal antagonista de la historia?",
-      options: ["Kaa", "Shere Khan", "King Louie", "Raksha"],
-      answer: "Shere Khan"
-    }
-  ];
-
-  let preguntaActual = 0;
-  let puntaje = 0;
-
-  function mostrarPregunta() {
-    const q = preguntas[preguntaActual];
-    document.getElementById("question-es").textContent = q.question;
-    const optionsDiv = document.getElementById("options-es");
-    optionsDiv.innerHTML = "";
-    q.options.forEach(option => {
-      const btn = document.createElement("button");
-      btn.className = "option";
-      btn.textContent = option;
-      btn.onclick = () => verificarRespuesta(option);
-      optionsDiv.appendChild(btn);
-    });
-  }
-
-  function verificarRespuesta(seleccionada) {
-    if (seleccionada === preguntas[preguntaActual].answer) {
-      puntaje++;
-    }
-    preguntaActual++;
-    if (preguntaActual < preguntas.length) {
-      mostrarPregunta();
-    } else {
-      mostrarPuntaje();
-    }
-  }
-
-  function mostrarPuntaje() {
-    document.getElementById("quiz-container-es").innerHTML =
-      `<h2>¡Juego terminado!</h2>
-       <p class="score">Puntaje final: ${puntaje} de ${preguntas.length}</p>`;
-  }
-
-  mostrarPregunta();
-</script>
-</div>
-
-  <!-- Pie de página -->
   <footer>
     <p>Creado por Di Prinzio - Hernandorena - Barrientos - Nicora</p>
   </footer>
 
-  <!-- Lógica JS -->
+  <!-- Enlace al archivo JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
